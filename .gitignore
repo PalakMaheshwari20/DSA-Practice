@@ -1,0 +1,3 @@
+# Ignore files with extension .exe, because we only need code
+
+*.exe
