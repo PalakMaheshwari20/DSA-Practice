@@ -328,10 +328,61 @@ void pattern19(int N)
       }
 }
 
+void pattern20(int n)
+{
+    int iniS=2*n-2;
+        for(int i=1;i<=(2*n-1);i++)
+        {
+            int star=i;
+            if(i>n) star=2*n-i;
+            //star
+            for(int j=1;j<=star;j++)
+                cout<<"*";
+            //space
+            for(int j=1;j<=iniS;j++)
+                cout<<" ";
+            //star
+            for(int j=1;j<=star;j++)
+                cout<<"*";
+            cout<<endl;
+            if(i<n) iniS-=2;
+            else iniS+=2;
+        }
+}
+
+void pattern21(int n)
+{
+    for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                if(i==0 || i==n-1 || j==0 || j==n-1)   cout<<"*";
+                else cout<<" ";
+            }
+            cout<<endl;
+        }
+}
+
+void pattern22(int n)
+{
+    for(int i=0;i<(2*n-1);i++)
+        {
+            for(int j=0;j<(2*n-1);j++)
+            {
+                int top=i;
+                int left=j;
+                int right=2*n-2-j;
+                int bottom=2*n-2-i;
+                cout<<(n-min(min(top,bottom),min(left,right)))<<" ";
+            }
+            cout<<endl;
+        }
+}
+
 int main()
 {
     int n;
     cin>>n;
-    pattern19(n);
+    pattern22(n);
     return 0;
 }
