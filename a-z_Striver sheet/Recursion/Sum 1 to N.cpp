@@ -1,17 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void printNos(int N)
+int printNos(int N)
     {
         if(N==0)
-            return;
-        printNos(N-1);
-        cout<<N<<" ";
+            return 0;
+        return N+printNos(N-1);
     }
 
 int main()
 {
     int n;
     cin>>n;
-    printNos(n);
+    cout<<printNos(n);
 }
