@@ -2,8 +2,8 @@
 using namespace std;
 
 //Time Complexity: O(N*LOG(N)) for worst and average case and best case....At each step, we divide the whole array, for that 
-//logn and we assume n steps are taken to get sorted array, so overall time complexity will be nlogn
-//Space complexity: O(N) as we are using a temporary array to store elements in sorted order.
+//log(N) and we assume n steps are taken to get sorted array, so overall time complexity will be nlogn
+//Space complexity: O(N) (O(N)+O(N)) as we are using a temporary array to store elements in sorted order also for recursion stack space.
 void merge(int arr[], int low, int mid, int high)
 {
     vector<int> temp; 

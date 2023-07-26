@@ -1,6 +1,27 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//Recursive Bubble sort
+////Time Complexity: O(N^2) for worst and average case
+//Space complexity: O(N) because it takes auxiliary stack space
+void bubble_sort(int arr[], int n) {
+    // Base Case: range == 1.
+    if (n == 1) return;
+
+    for (int j = 0; j <= n - 2; j++) {
+        if (arr[j] > arr[j + 1]) {
+            int temp = arr[j + 1];
+            arr[j + 1] = arr[j];
+            arr[j] = temp;
+        }
+    }
+
+    //Range reduced after recursion:
+    bubble_sort(arr, n - 1);
+}
+
+
+//Iterative Bubble sort
 //Time Complexity: O(N^2) for worst and average case
 //Space complexity: O(1) as no extra space was used in sorting of array
 void bubble_sort(int arr[], int n) {
